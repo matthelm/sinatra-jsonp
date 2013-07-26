@@ -16,7 +16,7 @@ module Sinatra
         if callback
           callback.tr!('^a-zA-Z0-9_$\.', '')
           content_type :js
-          response = "#{callback}(#{data})"
+          response = "#{callback}([#{data}, 200])"
         else
           content_type :json
           response = data
